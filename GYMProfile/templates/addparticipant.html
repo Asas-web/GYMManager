@@ -1,0 +1,53 @@
+{% extends 'profile.html' %}
+
+{% block content %}
+<center>
+  <div class="container mt-2 participant-card py-5 h-100">
+    <h1 class="mb-5">Add Participant</h1>
+    <form action="{% url 'profile:addparticipants' %}" method="post">
+      {% csrf_token %}
+      <div class="form-outline mb-2 text-start">
+        <label for="participantName" class="col-form-label">Name</label>
+        <input type="text" class="form-control w-25" id="participantName" name="participantName">
+      </div>
+      <div class="form-outline mb-2 text-start">
+        <label for="sex">Sex</label>
+        <select class="form-select text-start mb-2 w-25" id="sex" name="sex">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      <div class="form-outline mb-2 text-start">
+        <label for="age">Age</label>
+        <input type="text" class="form-control w-25" id="age" name="age">
+      </div>
+      <div class="form-outline mb-2 text-start">
+        <label for="email">Email</label>
+        <input type="email" class="form-control w-25" id="email" name="email">
+      </div>
+      <div class="form-outline mb-2 text-start">
+        <label for="legalNumber">ID Number</label>
+        <input type="text" class="form-control w-25" id="legalNumber" name="legalNumber">
+      </div>
+      <div class="form-outline mb-2 text-start">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" class="form-control w-25" id="phoneNumber" name="phoneNumber">
+      </div>
+      <div class="form-outline mb-2 text-start">
+        <label for="medicalHistory">Medical History</label>
+        <textarea class="form-control w-25" id="medicalHistory" name="medicalHistory" rows="3"></textarea>
+      </div>
+      <div class="form-outline mb-2 mt-3 text-start">
+        <label for="amount">Subscription's amount</label>
+        <input type="number" class="form-control w-25" id="amount" name="amount">
+      </div>
+      <button type="submit" class="btn btn-info mt-3">Add Participant</button>
+    </form>
+
+  </div>
+
+</center>
+
+
+
+{% endblock %}
